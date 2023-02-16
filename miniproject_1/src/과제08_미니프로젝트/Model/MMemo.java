@@ -30,7 +30,8 @@ public class MMemo {
 	}
 
 	// 메소드 영역
-	public String searchID( int mNo ) {
+	public String searchID( int mno ) {		
+		
 		// from No 비교하고, 아이디값 반환
 		// Member.getInstance().get
 		return null;

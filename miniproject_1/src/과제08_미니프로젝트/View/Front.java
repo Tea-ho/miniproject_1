@@ -154,23 +154,30 @@ public class Front {
 		public void myproduct_page(int mno) {
 			
 			ArrayList<Product> myP = CProduct.getInstance().myProducts(mno);
+			
+			int pno = 0; // pno 나와야함
+			
 			System.out.println(">>>>등록 제품 목록 >>>>>>>>>>>>>>>>>>>>>>>>>>>");
 			System.out.println("----------------------------------------------------------------------");
 			System.out.println("카테고리번호\t제품번호\t제품이름\t제품가격");
 			for(Product p : myP)
 				{System.out.println(p.pCode+"\t"+p.pno+"\t"+p.title+"\t"+p.price+"\t"+p.state);}
 			System.out.println("---------------------------------------------------------------------\n"
-						+ "메뉴 > 1. 제품수정   2. 제품삭제  3. 판매완료  4. 쪽지함\n"
+						+ "메뉴 > 1. 마이페이지 2. 쪽지전송 \n"
 						+ "----------------------------------------------------------------------");
 			
-			int ch = scanner.nextInt();
+			int ch1 = scanner.nextInt();
 			
-			if		(ch==1) {update_page(mno); }
-			else if	(ch==2) {delete_page(mno); }
-			else if	(ch==3) {compelete_page(mno);}
-			else if	(ch==4) {}
-			else {System.err.println("[알림] 알 수 없는 행동입니다."); }
-			
+			if( ch1 == 1) {	
+				System.out.println("메뉴 > 1. 제품수정   2. 제품삭제  3. 판매완료 4. 쪽지함");
+				int ch2 = scanner.nextInt();
+				if		(ch2==1) {update_page(mno); }
+				else if	(ch2==2) {delete_page(mno); }
+				else if	(ch2==3) {compelete_page(mno);}
+				else if	(ch2==4) { printMemo(mno, pno); }
+				else {System.err.println("[알림] 알 수 없는 행동입니다."); }
+			}
+			if( ch1 == 2) { writeMemo(mno, pno); }
 		}
 		
 		// 12. 제품 수정
@@ -208,13 +215,13 @@ public class Front {
 	
 	//----------------------------------------------------- 메모 Strat
 	// 1. 쪽지 작성 화면
-	public void writeMemo( int mno, int pno ) {
+	public void writeMemo( int fromNo, int pno ) {
 		System.out.println("-----------------------쪽지 작성 페이지-----------------------");
 		System.out.print("제목: ");					String title = scanner.next();
 		System.out.print("내용: ");					String content = scanner.next();
 		System.out.print("[하단 버튼] 1.발송 2.취소: ");	int send = scanner.nextInt();
 		
-		boolean result = CMemo.getInstance().writeMemo(mno, pno, title, content, send);
+		boolean result = CMemo.getInstance().writeMemo(fromNo, pno, title, content, send);
 		if(result) {
 			System.out.println("[알림]쪽지 발송 완료");
 		}
@@ -222,11 +229,11 @@ public class Front {
 	}
 	
 	// 2. 쪽지 출력 화면
-	public void printMemo( int pno ) {
+	public void printMemo( int mno, int pno ) {
 		while( true ) {
 			System.out.println("-----------------------쪽지함-----------------------");
 			System.out.println("번호\t제목\t작성자");
-			CMemo.getInstance().printMemo(pno);
+			CMemo.getInstance().printMemo(mno);
 			System.out.print("[쪽지 클릭] 쪽지 번호 입력: ");	int mNo = scanner.nextInt();
 			detailMemo(mNo, pno);
 		}
