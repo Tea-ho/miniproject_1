@@ -38,13 +38,13 @@ toSring, getter, setter
 
 3) Memo
 (1) 메시지 작성 메소드
-- 기능: 로그인 유무 체크
-- 매개변수: 
+- 기능: 로그인 유무 체크, DB 저장
+- 매개변수: String title, String content
 - 반환값: true, false
 (2) 메시지 발송 처리 메소드
-- 기능: DB 저장
-- 매개변수: String title, String content
-- 반환값: x
+- 기능: DB 저장 유무 결정
+- 매개변수: int send
+- 반환값: true, false
 (3) 메시지 출력 메소드
 - 기능: MMemo tostring 출력
 - 매개변수: x
