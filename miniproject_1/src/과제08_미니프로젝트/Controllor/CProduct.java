@@ -1,5 +1,6 @@
 package 과제08_미니프로젝트.Controllor;
 
+import java.security.cert.PolicyNode;
 import java.util.ArrayList;
 
 import 과제08_미니프로젝트.Model.Product;
@@ -17,42 +18,17 @@ public class CProduct {
 		return productDB ;
 	}
 	
-	// ?
 			
-	// 제품 출력
-	public ArrayList<Product> print () {
-		
-		
-		return productDB;
-	}
+	// 내가 등록한 제품 출력
+	public ArrayList<Product> myProducts(int mno) {
 	
-	// 제품 등록
-	public boolean register() {
+		ArrayList<Product> myP = new ArrayList<>();
 		
-		return true;
+		for(Product p : productDB)
+		{if(p.mno==mno)
+			{myP.add(p);}// for e
+		}
+		return myP;
 	}
-	// 제품 상세
-	public Product view() {
-		
-		Product product = new Product();
-		
-		return product;
-	}
-	// 제품 수정
-	public boolean update() {
-		
-		return true;
-	}
-	// 제품 삭제
-	public boolean delete() {
-		
-		return true;
-	}
-	// 제품 상태 변경
-	public boolean compelete() {
-		
-		return true;
-	}
-	
-	
+
 }

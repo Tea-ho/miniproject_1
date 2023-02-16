@@ -19,7 +19,7 @@
 일반필드: title,content, price, state
 
 [생성자]
-Empty 생성자, 매개변수 5개 생성자 (int mno,String pCode, String title, String content, String price)
+Empty 생성자, 매개변수 5개 생성자 (int mno, int pno, String title, String content, String price, String state)
 
 [메소드]
 (1) 제품출력
@@ -28,12 +28,12 @@ Empty 생성자, 매개변수 5개 생성자 (int mno,String pCode, String title
 - 반환값: ArrayList<Product>
 (2) 제품등록
 - 기능: 제품 DB 저장
-- 매개변수: int mno,String pCode, String title, String content, String price
-- 반환값:true,false
+- 매개변수: String id,String pCode, String title, String content, String price
+- 반환값: pno
 (3) 제품상세
 - 기능: 제품 정보 출력
 - 매개변수:int pno
-- 반환값:Product 객체
+- 반환값:int pno
 (4) 제품수정
 - 기능: 해당 제품 정보 수정
 - 매개변수:int pno
