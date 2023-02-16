@@ -62,11 +62,13 @@ public class CMemo {
 	}
 	
 	// 3. 메시지 출력 메소드 (기능: MMemo tostring 출력)
-	public MMemo printMemo( int pno ){
+	public MMemo printMemo( int mno ){
+		
+		// String key = memoDB.searchID(mno); // 확인 필요!
 		
 		for( int i = 0; i < memoDB.size(); i++) {
 			
-			if( memoDB.get(i).getpNo() == pno ) {
+			if( memoDB.get(i).getpNo() == mno ) {
 				return memoDB.get(i);
 			}
 		}
