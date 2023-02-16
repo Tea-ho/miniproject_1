@@ -1,7 +1,6 @@
 package 과제08_미니프로젝트.Controllor;
 
 import java.util.ArrayList;
-import java.util.Random;
 
 import 과제08_미니프로젝트.Model.MMemo;
 
@@ -35,17 +34,11 @@ public class CMemo {
 	
 	// 1-1. 메시지 넘버 생성 함수
 	public int createMeNo() {
-		
-		Random random = new Random();		
+			
 		int result = 0;
 		
-		for( int i = 0; i < 1; i++) {
-			result = random.nextInt(89999)+10000;
-			for( int j = 0; j < memoDB.size(); j++ ) {
-				if( result == memoDB.get(j).getMeNo() ) {
-					i--;
-				}
-			}
+		if( memoDB.size() != 0 ) {
+			result = memoDB.get(memoDB.size()-1).getMeNo()+1;
 		}
 		return result;
 	}
@@ -53,12 +46,8 @@ public class CMemo {
 	// 2. 메시지 발송 처리 메소드 (기능: DB 저장)
 	public boolean sendMemo( int send ) {
 		
-		if( send == 1 ) {
-			return true;
-		}
-		else {
-			return false;
-		}
+		if( send == 1 ) { return true; }
+		else { return false; }
 	}
 	
 	// 3. 메시지 출력 메소드 (기능: MMemo tostring 출력)
