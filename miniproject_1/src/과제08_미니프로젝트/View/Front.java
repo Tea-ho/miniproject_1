@@ -59,13 +59,13 @@ public class Front {
 	}
 	
 	// 3. 로그인 페이지
-	public void login_page() {
+	public void login_page(  ) {
 		System.out.println("ID : "); String id = scanner.next();
 		System.out.println("PW : "); String pw = scanner.next();
 		int result = Mcontroller.getInstance().login( id, pw );
 		if ( result == -1 ) {System.out.println("ID나 PW가 옳지 않습니다.");}
 		else if ( result == -2 ) { System.out.println("로그인 실패. 해당 아이디가 존재하지 않습니다."); } 
-		else if ( result >= 0){ System.out.println("[알림]로그인 성공" + result); product( ); } // result가 0이상일때 로그인성공 + mno 부여
+		else if ( result >= 0){ System.out.println("[알림]로그인 성공" + result); main_page( result ); } // result가 0이상일때 로그인성공 + mno 부여
 		
 	}
 	
@@ -87,11 +87,8 @@ public class Front {
 		else { System.out.println("회원님의 비밀번호 : " + result + "입니다."); }
  	}
 	
-	// 6. product로 화면 이동
-		public void product( String id ) { }
-	
 	// 7. 메인
-	public void main_page() {
+	public void main_page( int mno ) {
 		System.out.println(">>>>main>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
 		System.out.println("---------------------------------------------------------------------\n"
 					+ "1. 의류\n2. 화장품\n3. 악세사리\n4. 전자제품\n"
