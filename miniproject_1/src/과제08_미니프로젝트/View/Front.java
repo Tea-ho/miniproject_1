@@ -101,11 +101,11 @@ public class Front {
 			if		(ch==1) {String ch2  = scanner.next();
 							print_page(ch2,mno);}
 			else if	(ch==2) {myproduct_page(mno); }
-
+			else if	(ch==3) {break; }
 		}// while e
 	}
 	
-	// 8. 출력
+	// 8. 출
 		public void print_page(String ch2,int mno) {
 
 			ArrayList<Product> List = null;
@@ -243,20 +243,30 @@ public class Front {
 	public void printMemo( int mno, int pno ) {
 		while( true ) {
 			System.out.println("-----------------------쪽지함-----------------------");
-			System.out.println("번호\t제목\t작성자");
-			for( int i = 0; i < CMemo.getInstance().printMemo().size(); i++ ) {
-				int check = CMemo.getInstance().printMemo().get(i).getpNo();
-				if( Product.getInstance().  )
-			}
+			System.out.println("제목\t내용");
+			int i = 0;
+				for( Product p : CProduct.getInstances()  ) {
+					if( p.mno == mno) {
+						System.out.println("내가 등록한 제품");
+						for( MMemo m : CMemo.getInstance().getMemoDB() ) {
+							if( p.mno == m.getfromNo() ) {
+								System.out.println( i + "\t" + m.getTitle() + "\t" + m.getContent() );
+							}
+						}
+					}
+				}
 			
-			System.out.print("[쪽지 클릭] 쪽지 번호 입력: ");	int choice = scanner.nextInt();
+			System.out.print("쪽지 클릭: ");	int choice = scanner.nextInt();
+			if( choice == -1) {
+				break;
+			}
 			detailMemo(choice, pno);
 		}
 	}
 	
 	public void detailMemo( int mNo, int pno ) {
 		CMemo.getInstance().detailMemo(mNo);
-		System.out.print("[하단 버튼] 1.답장 2.뒤로가기 3.삭제");	int choice = scanner.nextInt();
+		System.out.print("[하단 버튼]1.뒤로가기 2.삭제");	int choice = scanner.nextInt();
 		if( choice == 1 ) {
 			
 		}

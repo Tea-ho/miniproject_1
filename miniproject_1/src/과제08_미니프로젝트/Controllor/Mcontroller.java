@@ -45,9 +45,9 @@ public class Mcontroller {
 	public int login ( String id , String pw) {
 		for ( int i = 0 ; i<memberDb.size(); i++ ) {
 			if(memberDb.get(i).getId().equals(id) && memberDb.get(i).getPwd().equals(pw)) { return memberDb.get(i).getMno();  } // 로그인 성공 mno 값을 반환해야한다.
-			else if ( !memberDb.get(i).equals(id) || !memberDb.get(i).equals(pw) ) { return -1; }	// 로그인 실패 return -1
+			
 		}
-		return -2;	// 회원정보 X
+		return -1;	// 회원정보 X
 	}
 	
 	// 3. 아이디 찾기 로직

@@ -60,4 +60,11 @@ public class CMemo {
 	public MMemo detailMemo( int mNo) {
 		return memoDB.get(mNo);
 	}
+	public ArrayList<MMemo> getMemoDB() {
+		return memoDB;
+	}
+	
+	
+	
+	
 }
