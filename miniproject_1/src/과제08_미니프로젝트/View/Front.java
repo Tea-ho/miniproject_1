@@ -177,7 +177,7 @@ public class Front {
 			
 			int ch1 = scanner.nextInt();
 			
-<<<<<<< HEAD
+
 			if( ch1 == 1) {	
 				System.out.println("메뉴 > 1. 제품수정   2. 제품삭제  3. 판매완료 4. 쪽지함");
 				int ch2 = scanner.nextInt();
@@ -188,13 +188,7 @@ public class Front {
 				else {System.err.println("[알림] 알 수 없는 행동입니다."); }
 			}
 			if( ch1 == 2) { writeMemo(mno, pno); }
-=======
-			if		(ch==1) {update_page(mno); }
-			else if	(ch==2) {delete_page(mno); }
-			else if	(ch==3) {compelete_page(mno);}
-			else if	(ch==4) {}
-			
->>>>>>> branch 'soyeon' of https://github.com/Tea-ho/miniproject_1
+
 		}
 		
 		// 12. 제품 수정
