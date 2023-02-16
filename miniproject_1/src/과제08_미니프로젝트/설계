@@ -15,10 +15,37 @@
 
 2) Product
 [필드]
+관계필드: mno(참조),pno(식별),pCode(식별),
+일반필드: title,content, price, state
 
 [생성자]
+Empty 생성자, 매개변수 5개 생성자 (int mno,String pCode, String title, String content, String price)
 
 [메소드]
+(1) 제품출력
+- 기능: 카테고리별 제품 출력
+- 매개변수:String pCode
+- 반환값: ArrayList<Product>
+(2) 제품등록
+- 기능: 제품 DB 저장
+- 매개변수: int mno,String pCode, String title, String content, String price
+- 반환값:true,false
+(3) 제품상세
+- 기능: 제품 정보 출력
+- 매개변수:int pno
+- 반환값:Product 객체
+(4) 제품수정
+- 기능: 해당 제품 정보 수정
+- 매개변수:int pno
+- 반환값:true,false
+(5) 제품삭제
+- 기능: 해당 제품 DB 에서 삭제
+- 매개변수:int pno
+- 반환값:true,false
+(6) 상태변경
+- 기능: 판매중->판매완료
+- 매개변수:int pno
+- 반환값:true,false
 
 3) Memo
 [필드]

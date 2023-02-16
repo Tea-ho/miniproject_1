@@ -22,12 +22,10 @@ public class Product {
 		
 		// 2-1. 빈생성자
 		public Product() { }
+		
 		// 2-2. 풀생성자
-
-		public Product(int mno, int pno, String pCode, String title, String content, String price, String state) {
-			this.mno = mno;
-			this.pno = pno;
-			this.pCode = pCode;
+		public Product(int mno,String pCode, String title, String content, String price, String state) {
+			this.mno =mno;
 			this.title = title;
 			this.content = content;
 			this.price = price;
@@ -47,13 +45,14 @@ public class Product {
 		// 제품 등록
 		public boolean register() {
 			
+			
+			
 			return true;
 		}
 		// 제품 상세
 		public Product view() {
 			
-			Product product = new Product();
-			
+			Product product = new Product();			
 			return product;
 		}
 		// 제품 수정
