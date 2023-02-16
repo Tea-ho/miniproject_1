@@ -247,10 +247,9 @@ public class Front {
 			int i = 0;
 				for( Product p : CProduct.getInstances()  ) {
 					if( p.mno == mno) {
-						System.out.println("내가 등록한 제품");
 						for( MMemo m : CMemo.getInstance().getMemoDB() ) {
 							if( p.mno == m.getfromNo() ) {
-								System.out.println( i + "\t" + m.getTitle() + "\t" + m.getContent() );
+								System.out.println( m.getTitle() + "\t" + m.getContent() );
 							}
 						}
 					}
