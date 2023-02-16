@@ -30,6 +30,10 @@ public class MMemo {
 	}
 
 	// 메소드 영역
+	public String searchID( int fromNo ) {
+		return null;
+	}
+	
 	@Override
 	public String toString() {
 		return "MMemo [fromNo=" + fromNo + ", pNo=" + pNo + ", meNo=" + meNo + ", title=" + title + ", content=" + content

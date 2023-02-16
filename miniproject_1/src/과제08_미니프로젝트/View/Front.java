@@ -2,7 +2,9 @@ package 과제08_미니프로젝트.View;
 
 import java.util.Scanner;
 
+import 과제08_미니프로젝트.Controllor.CMemo;
 import 과제08_미니프로젝트.Controllor.Mcontroller;
+import 과제08_미니프로젝트.Model.MMemo;
 
 
 
@@ -58,10 +60,46 @@ public class Front {
 	
 	
 	
+	//----------------------------------------------------- 메모 Strat
+	// 1. 쪽지 작성 화면
+	public void writeMemo( int mno, int pno ) {
+		System.out.println("-----------------------쪽지 작성 페이지-----------------------");
+		System.out.print("제목: ");					String title = scanner.next();
+		System.out.print("내용: ");					String content = scanner.next();
+		System.out.print("[하단 버튼] 1.발송 2.취소: ");	int send = scanner.nextInt();
+		
+		boolean result = CMemo.getInstance().writeMemo(mno, pno, title, content, send);
+		if(result) {
+			System.out.println("[알림]쪽지 발송 완료");
+		}
+		// 확인 필요 내용: 2번 눌렀을 때, 뒤 메뉴로 가는지 확인
+	}
 	
+	// 2. 쪽지 출력 화면
+	public void printMemo( int pno ) {
+		while( true ) {
+			System.out.println("-----------------------쪽지함-----------------------");
+			System.out.println("번호\t제목\t작성자");
+			CMemo.getInstance().printMemo(pno);
+			System.out.print("[쪽지 클릭] 쪽지 번호 입력: ");	int mNo = scanner.nextInt();
+			detailMemo(mNo, pno);
+		}
+	}
 	
-	
-	
+	public void detailMemo( int mNo, int pno ) {
+		CMemo.getInstance().detailMemo(mNo);
+		System.out.print("[하단 버튼] 1.답장 2.뒤로가기 3.삭제");	int choice = scanner.nextInt();
+		if( choice == 1 ) {
+			
+		}
+		else if( choice == 2 ) {
+			
+		}
+		else if( choice == 3 ) {
+			
+		}
+		else { System.out.println("번호를 다시 입력해주세요.");	}
+	}
 	
 	
 	
