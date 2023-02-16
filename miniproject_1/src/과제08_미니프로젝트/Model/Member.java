@@ -1,5 +1,7 @@
 package 과제08_미니프로젝트.Model;
 
+import java.util.ArrayList;
+
 public class Member {
 	
 	// 1. 필드
@@ -11,8 +13,7 @@ public class Member {
 	
 	// 2. 생성자
 	public Member() { } // 빈
-	public Member(String id, String pwd, String name, String phone, int mno) { // 풀
-		super();
+	public Member(String id, String pwd, String name, String phone, int mno ) { // 풀
 		this.id = id;
 		this.pwd = pwd;
 		this.name = name;
@@ -49,5 +50,6 @@ public class Member {
 	public void setMno(int mno) {
 		this.mno = mno;
 	}
+
 	
 }
