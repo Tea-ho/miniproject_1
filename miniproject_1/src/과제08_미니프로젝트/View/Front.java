@@ -89,38 +89,47 @@ public class Front {
 	
 	// 7. 메인
 	public void main_page( int mno ) {
-		System.out.println(">>>>main>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
-		System.out.println("---------------------------------------------------------------------\n"
-					+ "1. 의류\n2. 화장품\n3. 악세사리\n4. 전자제품\n"
-					+ "---------------------------------------------------------------------\n"
-					+ "메뉴 > 1. 카테고리 선택  2. 마이페이지\n"
-					+ "----------------------------------------------------------------------");
-			
-		int ch = scanner.nextInt();
-			
-		if		(ch==1) {print_page(p1.print("01")); }
-		else if	(ch==2) {print_page(p2.print("02")); }
-		else if	(ch==3) {print_page(p3.print("03")); }
-		else if	(ch==4) {print_page(p4.print("04"));; }
-		else {System.err.println("[알림] 알 수 없는 행동입니다."); }
+		while(true) {
+			System.out.println(">>>>main>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+			System.out.println("---------------------------------------------------------------------\n"
+						+ "01. 의류\n02. 화장품\n03. 악세사리\n04. 전자제품\n"
+						+ "---------------------------------------------------------------------\n"
+						+ "메뉴 > 1. 카테고리 선택  2. 마이페이지  3. 로그아웃\n"
+						+ "----------------------------------------------------------------------");
+				
+			int ch  = scanner.nextInt();
+			if		(ch==1) {String ch2  = scanner.next();
+							print_page(ch2,mno);}
+			else if	(ch==2) {myproduct_page(mno); }
+
+		}// while e
 	}
 	
 	// 8. 출력
-		public void print_page(ArrayList<Product> result) {
-			
-			ArrayList<Product> List = result;
-			
+		public void print_page(String ch2,int mno) {
+
+			ArrayList<Product> List = null;
+	
 			System.out.println(">>>>출력>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
 			System.out.println("----------------------------------------------------------------------");
-			System.out.println("카테고리번호\t제품번호\t제품이름\t제품가격");
-			for (Product p :List)
-			{System.out.println(p.pCode+"\t"+p.pno+"\t"+p.title+"\t"+p.price+"\t"+p.state); }
 			
+			System.out.println("카테고리번호제품번호\t제품이름\t제품가격\t제품상태");
+			if(ch2.equals("01")) 	  {List = p1.print("01");}
+			else if(ch2.equals("02")) {List = p1.print("02");}
+			else if(ch2.equals("03")) {List = p1.print("03");}
+			else if(ch2.equals("04")) {List = p1.print("04");}
+			else {System.out.println("[알림] 등록된 제품이 없습니다.");}
+				
 			System.out.println("---------------------------------------------------------------------\n"
 							+ "메뉴 > 1. 제품등록	    2. 제품상세\n"
 							+ "----------------------------------------------------------------------");
 			
-			System.out.println("[알림] 등록 완료되었습니다.");
+			int ch  = scanner.nextInt();
+			if ( ch == 1 )		{ resgister_page(mno); }
+			else if ( ch == 2 ) { view_page(mno); }
+			
+			
+
 		}
 		// 9. 등록
 		public void resgister_page(int mno) {
@@ -137,8 +146,8 @@ public class Front {
 			else if	(pcode.equals("2")) {p2.register(mno, title, content, price);}
 			else if	(pcode.equals("3")) {p3.register(mno, title, content, price);}
 			else if	(pcode.equals("4")) {p4.register(mno, title, content, price);}
-			else {System.err.println("[알림] 알 수 없는 행동입니다."); }
 		
+			System.out.println("[알림] 등록 완료되었습니다.");
 		}
 		// 10. 상세
 		public void view_page(int mno) {
@@ -169,7 +178,6 @@ public class Front {
 			else if	(ch==2) {delete_page(mno); }
 			else if	(ch==3) {compelete_page(mno);}
 			else if	(ch==4) {}
-			else {System.err.println("[알림] 알 수 없는 행동입니다."); }
 			
 		}
 		

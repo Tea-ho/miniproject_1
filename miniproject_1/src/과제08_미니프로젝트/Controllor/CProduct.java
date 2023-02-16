@@ -17,6 +17,8 @@ public class CProduct {
 		return productDB ;
 	}
 	
+	// 제품 출력
+	
 			
 	// 내가 등록한 제품 출력
 	public ArrayList<Product> myProducts(int mno) {
