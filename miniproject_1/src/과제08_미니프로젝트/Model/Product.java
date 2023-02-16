@@ -39,7 +39,7 @@ public class Product {
 		public ArrayList<Product> print (String pCode) {
 
 			ArrayList<Product> result = CProduct.getInstances();
-					
+			
 			return result;
 		}
 		
@@ -53,10 +53,11 @@ public class Product {
 			product.mno = mno;
 			product.title = title;
 			product.content = content;
+			product.price = price;
 			
 			// 자동 생성 내용 저장
 			product.pCode = null;
-			product.mno = 0;
+			product.mno = mno;
 			
 			// pno (마지막 pno +1)
 			int pno = 0;
@@ -81,9 +82,9 @@ public class Product {
 			{if(p.pno==pno) 
 				{// 일치한 제품 정보 출력
 				System.out.println("제품 이름 : "+p.title); 
-				System.out.println("제품 내용 : "+p.title);
-				System.out.println("제품 가격 : "+p.title);
-				System.out.println("제품 상태 : "+p.title);
+				System.out.println("제품 내용 : "+p.content);
+				System.out.println("제품 가격 : "+p.price);
+				System.out.println("제품 상태 : "+p.state);
 				}// if e 
 			}// for e
 			
