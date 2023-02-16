@@ -233,9 +233,13 @@ public class Front {
 		while( true ) {
 			System.out.println("-----------------------쪽지함-----------------------");
 			System.out.println("번호\t제목\t작성자");
-			CMemo.getInstance().printMemo(mno);
-			System.out.print("[쪽지 클릭] 쪽지 번호 입력: ");	int mNo = scanner.nextInt();
-			detailMemo(mNo, pno);
+			for( int i = 0; i < CMemo.getInstance().printMemo().size(); i++ ) {
+				int check = CMemo.getInstance().printMemo().get(i).getpNo();
+				if( Product.getInstance().  )
+			}
+			
+			System.out.print("[쪽지 클릭] 쪽지 번호 입력: ");	int choice = scanner.nextInt();
+			detailMemo(choice, pno);
 		}
 	}
 	

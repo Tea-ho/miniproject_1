@@ -32,7 +32,8 @@ public class MMemo {
 	// 메소드 영역
 	public String searchID( int mno ) {		
 		
-		// from No 비교하고, 아이디값 반환
+		// 1. product에 등롥된 mno와 현재 mno가 일치하는지 확인 필요
+		// 2. 같으면, fromNo와 같은 Member에 저장되어 있는 아이디 출력
 		// Member.getInstance().get
 		return null;
 	}
