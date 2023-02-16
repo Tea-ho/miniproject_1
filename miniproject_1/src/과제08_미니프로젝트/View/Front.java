@@ -73,7 +73,8 @@ public class Front {
 		else { System.out.println("회원님의 비밀번호 : " + result + "입니다."); }
  	}
 	
-	// 6. product로 화면 이동
+	
+	// 7. product로 화면 이동
 	public void product( ) { System.out.println("product 페이지"); }
 	
 	
