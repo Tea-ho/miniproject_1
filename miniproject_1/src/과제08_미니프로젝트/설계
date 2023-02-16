@@ -37,4 +37,19 @@ toSring, getter, setter
 2) Product
 
 3) Memo
-(1) 
+(1) 메시지 작성 메소드
+- 기능: 로그인 유무 체크
+- 매개변수: 
+- 반환값: true, false
+(2) 메시지 발송 처리 메소드
+- 기능: DB 저장
+- 매개변수: String title, String content
+- 반환값: x
+(3) 메시지 출력 메소드
+- 기능: MMemo tostring 출력
+- 매개변수: x
+- 반환값: ArrayList
+(4) 메시지 상세보기 메소드 
+- 기능: 선택된 메시지 내용 상세 보기
+- 매개변수: int mno
+- 반환값: 객체 Memo
